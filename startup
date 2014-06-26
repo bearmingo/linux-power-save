@@ -1,0 +1,30 @@
+#!/usr/bin/bash
+#chkconfig: 2345 20 80
+#description: set power save option at system startup
+
+
+start() {
+    #code to start app
+    /opt/power_utils/power_save
+}
+
+stop() {
+    #code to stop app
+    # nothing to do
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    restart)
+
+        ;;
+    *)
+        echo "$1 Didn't match anything"
+esac
+
+exit 0

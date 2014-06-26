@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+
+# set max frequency of cpu
+cpupower frequency-set --max=2.0GHz
+
+SCRIPT=`realpath $0`
+SCRIPT_PATH=`dirname $SCRIPT`
+
+# close GPU 
+insmod $SCRIPT_PATH/acpi_call.ko
+echo "\_SB.PCI0.P0P2.DGPU._OFF" > /proc/acpi/call
+
+
+
