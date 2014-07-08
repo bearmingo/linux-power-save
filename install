@@ -1,0 +1,22 @@
+#!/bin/bash
+
+install() {
+    cp ./startup /etc/rc.d/init.d/powersave
+}
+
+uninstall() {
+    rm /etc/rc.d/init.d/powersave
+}
+
+case "$1" in
+    install)
+        install
+        ;;
+    uninstall)
+        uninstall
+        ;;
+    *)
+        echo "<|1|> Didn't match anything"
+esac
+
+exit 0
